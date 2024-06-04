@@ -10,6 +10,16 @@
 
     {{> form }}
 
+    <div class="filter">
+      <button id="hide-complete-button">
+        {{#if hideCompleted}}
+          Show All
+        {{else}}
+          Hide completed
+        {{/if}}
+      </button>
+    </div>
+
     <ul>
       {{#each tasks}}
         {{> task}}

@@ -1,3 +1,5 @@
+import { Template } from 'meteor/templating'
+
 const { TasksCollection } = require("/imports/api/TasksCollection")
 
 import './Task.html'
