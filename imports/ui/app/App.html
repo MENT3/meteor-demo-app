@@ -5,25 +5,22 @@
 <template name="mainContainer">
   <div class="container">
     <header>
-      <h1>Todo List</h1>
+      <h1>
+        Todo List
+        <span>({{incompleteCount}})</span>
+      </h1>
     </header>
 
     {{> form }}
 
     <div class="filter">
       <button id="hide-complete-button">
-        {{#if hideCompleted}}
-          Show All
-        {{else}}
-          Hide completed
-        {{/if}}
+        {{#if hideCompleted}} Show All {{else}} Hide completed {{/if}}
       </button>
     </div>
 
     <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
+      {{#each tasks}} {{> task}} {{/each}}
     </ul>
   </div>
 </template>
