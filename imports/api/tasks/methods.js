@@ -1,5 +1,5 @@
 import { check } from "meteor/check"
-import { TasksCollection } from "../collections"
+import { TasksCollection } from "/imports/api/collections"
 
 Meteor.methods({
   'tasks.insert'(text) {
