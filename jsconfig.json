@@ -60,6 +60,11 @@
       "meteor/reactive-dict": [
         "/Users/clement/.meteor/packages/reactive-dict/1.3.1/web.browser/migration.js",
         "/Users/clement/.meteor/packages/reactive-dict/1.3.1/web.browser/reactive-dict.js"
+      ],
+      "meteor/accounts-password": [
+        "/Users/clement/.meteor/packages/accounts-password/2.4.0/web.browser/password_client.js",
+        "/Users/clement/.meteor/packages/accounts-password/2.4.0/web.browser/email_templates.js",
+        "/Users/clement/.meteor/packages/accounts-password/2.4.0/web.browser/password_server.js"
       ]
     }
   },

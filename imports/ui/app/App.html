@@ -3,26 +3,30 @@
 </body>
 
 <template name="mainContainer">
-  <div class="container">
-    <header>
-      <h1>
-        Todo List
-        <span>({{incompleteCount}})</span>
-      </h1>
-    </header>
+  {{#if isUserLogged}}
+    <div class="container">
+      <header>
+        <h1>
+          Todo List
+          <span>({{incompleteCount}})</span>
+        </h1>
+      </header>
 
-    {{> form }}
+      {{> form }}
 
-    <div class="filter">
-      <button id="hide-complete-button">
-        {{#if hideCompleted}} Show All {{else}} Hide completed {{/if}}
-      </button>
+      <div class="filter">
+        <button id="hide-complete-button">
+          {{#if hideCompleted}} Show All {{else}} Hide completed {{/if}}
+        </button>
+      </div>
+
+      <ul>
+        {{#each tasks}} {{> task}} {{/each}}
+      </ul>
     </div>
-
-    <ul>
-      {{#each tasks}} {{> task}} {{/each}}
-    </ul>
-  </div>
+  {{else}}
+    {{> login }}
+  {{/if}}
 </template>
 
 <template name="form">

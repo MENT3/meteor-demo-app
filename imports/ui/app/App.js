@@ -4,23 +4,39 @@ import { Template } from "meteor/templating";
 import { TasksCollection } from "../../api/TasksCollection";
 import "./App.html";
 import "../task/Task.js";
+import "../login/Login.js";
 
 const HIDE_COMPLETED_STRING = "hideCompleted";
 
-Template.mainContainer.onCreated(function () {
+const getTaskFilter = () => {
+  const user = Meteor.user()
+
+    const hideCompletedFilter = { isChecked: { $ne: true } };
+
+    const userFilter = user ? { userId: user._id } : {}
+    const pendingOnlyFilter = { ...hideCompletedFilter, ...userFilter }
+    return { userFilter, pendingOnlyFilter }
+}
+
+Template.mainContainer.onCreated(function mainContainerOnCreated() {
   this.state = new ReactiveDict();
 });
 
 Template.mainContainer.helpers({
+  isUserLogged() {
+    return !!Meteor.user()
+  },
+
   tasks() {
+    if (!Meteor.user()) return []
+
     const instance = Template.instance();
     const hideCompleted = instance.state.get(HIDE_COMPLETED_STRING);
 
-    const hideCompletedFilter = { isChecked: { $ne: true } };
-
-    return TasksCollection.find(hideCompleted ? hideCompletedFilter : {}, {
+    const { userFilter, pendingOnlyFilter } = getTaskFilter()
+    return TasksCollection.find(hideCompleted ? pendingOnlyFilter : userFilter, {
       sort: { createdAt: -1 },
-    }).fetch();
+    }).fetch()
   },
 
   hideCompleted() {
@@ -28,6 +44,8 @@ Template.mainContainer.helpers({
   },
 
   incompleteCount() {
+    if (!Meteor.user()) return ''
+
     const incompleteTasksCount = TasksCollection.find({ isChecked: { $ne: true } }).count()
     return incompleteTasksCount ? `${incompleteTasksCount}` : ''
   }
