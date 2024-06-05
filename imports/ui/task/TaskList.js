@@ -1,4 +1,4 @@
-import './TaskList.html'
+import './taskList.html'
 import { TasksCollection } from '/imports/api/tasks/collections'
 import { stateStatus } from '/imports/constants/state'
 

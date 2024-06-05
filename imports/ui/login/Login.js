@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
-import '../login/Login.html'
+import './login.html'
+import './login.css'
 
 Template.login.events({
   'submit .login-form'(e) {
@@ -8,9 +9,9 @@ Template.login.events({
 
     const target = e.target
 
-    const username = target.username.value
+    const email = target.email.value
     const password = target.password.value
 
-    Meteor.loginWithPassword(username, password)
+    Meteor.loginWithPassword(email, password)
   },
 })

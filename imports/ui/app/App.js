@@ -1,10 +1,11 @@
 import { ReactiveDict } from 'meteor/reactive-dict'
 import { Template } from 'meteor/templating'
 
-import './App.html'
-import '../login/Login.js'
-import '../task/Task.js'
-import '../task/TaskForm.js'
+import './app.html'
+import './app.css'
+import '../login/login.js'
+import '../task/task.js'
+import '../task/taskForm.js'
 import { TasksCollection } from '../../api/tasks/collections'
 import { stateStatus } from '../../constants/state'
 

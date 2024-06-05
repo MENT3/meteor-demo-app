@@ -1,4 +1,4 @@
-import './TaskForm.html'
+import './taskForm.html'
 
 Template.form.events({
   'submit .task-form'(event) {

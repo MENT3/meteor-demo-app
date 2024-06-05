@@ -1,7 +1,51 @@
 /* RESET */
 *, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; }
+* { margin: 0; padding: 0; }
 body { line-height: 1.5; -webkit-font-smoothing: antialiased; }
 img, picture, video, canvas, svg { display: block; max-width: 100%; }
 input, button, textarea, select { font: inherit; }
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* VARIABLES */
+:root {
+  --background: #f0f0f0;
+  --primary: #475569;
+  --primary-dark: #334155;
+  --white: #fff;
+  --text: #333;
+  --danger: #ef4444;
+  --danger-accent: #dc2626;
+}
+
+/* Style */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 14px;
+}
