@@ -1,5 +1,5 @@
 import './TaskList.html'
-import { TasksCollection } from '/imports/api/collections'
+import { TasksCollection } from '/imports/api/tasks/collections'
 import { stateStatus } from '/imports/constants/state'
 
 const getTaskFilter = () => {

@@ -5,7 +5,7 @@ import './App.html'
 import '../login/Login.js'
 import '../task/Task.js'
 import '../task/TaskForm.js'
-import { TasksCollection } from '../../api/collections'
+import { TasksCollection } from '../../api/tasks/collections'
 import { stateStatus } from '../../constants/state'
 
 Template.mainContainer.onCreated(function() {

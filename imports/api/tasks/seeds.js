@@ -1,4 +1,4 @@
-import { TasksCollection } from '/imports/api/collections'
+import { TasksCollection } from '/imports/api/tasks/collections'
 
 const insertTask = (taskText, userId) =>
   TasksCollection.insert({
