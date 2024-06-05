@@ -1,7 +1,12 @@
 import { Meteor } from "meteor/meteor"
 import { Accounts } from "meteor/accounts-base"
-import { TasksCollection } from "/imports/api/TasksCollection"
 
+import { TasksCollection } from "/imports/api/collections"
+
+import '/imports/api/tasks/methods'
+import '/imports/api/tasks/publications'
+
+// SEEDING
 const insertTask = (taskText, user) =>
   TasksCollection.insert({
     text: taskText,

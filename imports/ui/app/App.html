@@ -24,6 +24,11 @@
         {{#each tasks}} {{> task}} {{/each}}
       </ul>
     </div>
+
+    {{#if isLoading}}
+      <div class="loading">loading...</div>
+    {{/if}}
+
   {{else}}
     {{> login }}
   {{/if}}
