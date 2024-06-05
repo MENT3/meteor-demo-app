@@ -15,11 +15,11 @@
       {{> form}}
 
       {{> taskList}}
-    </div>
 
-    {{#if isLoading}}
-      <div class="loading">loading...</div>
-    {{/if}}
+      {{#if isLoading}}
+        <div class="loading">loading...</div>
+      {{/if}}
+    </div>
 
   {{else}}
     {{> login}}

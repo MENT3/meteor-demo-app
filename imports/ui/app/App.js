@@ -22,10 +22,10 @@ Template.mainContainer.helpers({
    },
 
   incompleteCount() {
-    if (!Meteor.user()) return ''
+    if (!Meteor.user()) return '0'
 
     const incompleteTasksCount = TasksCollection.find({ isChecked: { $ne: true } }).count()
-    return incompleteTasksCount ? `${incompleteTasksCount}` : ''
+    return incompleteTasksCount ? `${incompleteTasksCount}` : '0'
   }
 })
 

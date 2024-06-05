@@ -4,6 +4,7 @@ import { TasksCollection } from '/imports/api/tasks/collections'
 Meteor.methods({
   'tasks.insert'(text) {
     check(text, String)
+    if (!text) return
 
     if (!this.userId) throw new Error('403 - Not autorized')
 
