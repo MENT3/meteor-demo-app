@@ -1,8 +1,8 @@
-import { Accounts } from "meteor/accounts-base"
+import { Accounts } from 'meteor/accounts-base'
 
 const SEED_USER = {
-  email: "user@exemple.com",
-  password: "P@ssword1234",
+  email: 'user@exemple.com',
+  password: 'P@ssword1234',
 }
 
 export const usersSeed = () => {

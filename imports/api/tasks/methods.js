@@ -1,11 +1,11 @@
-import { check } from "meteor/check"
-import { TasksCollection } from "/imports/api/collections"
+import { check } from 'meteor/check'
+import { TasksCollection } from '/imports/api/collections'
 
 Meteor.methods({
   'tasks.insert'(text) {
     check(text, String)
 
-    if (!this.userId) throw new Error("403 - Not autorized")
+    if (!this.userId) throw new Error('403 - Not autorized')
 
     TasksCollection.insert({
       text,
@@ -17,7 +17,7 @@ Meteor.methods({
   'tasks.remove'(taskId) {
     check(taskId, String)
 
-    if (!this.userId) throw new Error("403 - Not autorized")
+    if (!this.userId) throw new Error('403 - Not autorized')
 
     const task = TasksCollection.findOne({ _id: taskId, userId: this.userId })
     if (!task) throw new Meteor.Error('Access denied.')
@@ -29,7 +29,7 @@ Meteor.methods({
     check(taskId, String)
     check(isChecked, Boolean)
 
-    if (!this.userId) throw new Error("403 - Not autorized")
+    if (!this.userId) throw new Error('403 - Not autorized')
 
     const task = TasksCollection.findOne({ _id: taskId, userId: this.userId })
     if (!task) throw new Meteor.Error('Access denied.')

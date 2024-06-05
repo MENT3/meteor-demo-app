@@ -1,4 +1,4 @@
-import { TasksCollection } from "/imports/api/collections"
+import { TasksCollection } from '/imports/api/collections'
 
 const insertTask = (taskText, userId) =>
   TasksCollection.insert({
@@ -10,13 +10,13 @@ const insertTask = (taskText, userId) =>
 export const tasksSeeds = (userId) => {
   if (TasksCollection.find().count() === 0) {
     [
-      "First Task",
-      "Second Task",
-      "Third Task",
-      "Fourth Task",
-      "Fifth Task",
-      "Sixth Task",
-      "Seventh Task",
+      'First Task',
+      'Second Task',
+      'Third Task',
+      'Fourth Task',
+      'Fifth Task',
+      'Sixth Task',
+      'Seventh Task',
     ].forEach(task => insertTask(task, userId))
   }
 }

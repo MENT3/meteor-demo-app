@@ -1,9 +1,9 @@
-import { Meteor } from "meteor/meteor"
-import { Template } from "meteor/templating"
-import "../login/Login.html"
+import { Meteor } from 'meteor/meteor'
+import { Template } from 'meteor/templating'
+import '../login/Login.html'
 
 Template.login.events({
-  "submit .login-form"(e) {
+  'submit .login-form'(e) {
     e.preventDefault()
 
     const target = e.target
