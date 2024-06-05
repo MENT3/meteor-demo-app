@@ -14,15 +14,7 @@
 
       {{> form }}
 
-      <div class="filter">
-        <button id="hide-complete-button">
-          {{#if hideCompleted}} Show All {{else}} Hide completed {{/if}}
-        </button>
-      </div>
-
-      <ul>
-        {{#each tasks}} {{> task}} {{/each}}
-      </ul>
+      {{> taskList}}
     </div>
 
     {{#if isLoading}}
@@ -32,11 +24,4 @@
   {{else}}
     {{> login }}
   {{/if}}
-</template>
-
-<template name="form">
-  <form class="task-form">
-    <input type="text" name="text" placeholder="Type to add new tasks" />
-    <button type="submit">Add Task</button>
-  </form>
 </template>

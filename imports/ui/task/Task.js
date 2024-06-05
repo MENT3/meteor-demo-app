@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating'
 
 import './Task.html'
+import './TaskList.js'
 
 Template.task.events({
   'click .toggle-checked'() {
